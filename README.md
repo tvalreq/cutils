@@ -1,2 +1,2 @@
 # cutils
-Diferente utils for using in C programs
+Diferent utils for using in C programs
