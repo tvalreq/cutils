@@ -23,7 +23,7 @@ Previously, you have to define the macro `CONTENT_TYPE` in order to determine th
 
 - `LIST_APPEND(head,node)` appends a new item `node` into the list pointed by `head`.
 - `LIST_REMOVE(head,node)` remove the item `node` from the list pointed by `head`.
-- `LIST_COUNT(head,counter)` counts in `counter` the number of items contained in the list pointed by `head`.
+- `LIST_COUNT(head,counter)` counts in `counter` the number of items contained in the list pointed by `head`. **pending...**
 
 
     
