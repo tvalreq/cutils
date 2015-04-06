@@ -23,13 +23,40 @@
 #include <stdlib.h>
 
 
-#define CONTENT_TYPE uint32_t
+/*
+ * ============================
+ * ====== GENERAL MACROS ======
+ * ============================
+*/
+
+
+#define MIN(a,b)                    \
+    ({                              \
+        __typeof__ (a) _a = (a);    \
+        __typeof__ (b) _b = (b);    \
+        _a < _b ? _a : _b;          \
+    })
+
+#define MAX(a,b)                    \
+    ({                              \
+        __typeof__ (a) _a = (a);    \
+        __typeof__ (b) _b = (b);    \
+        _a > _b ? _a : _b;          \
+    })
+
+/*
+ * =====
+*/
+
+
 
 /*
  * ==================
  * ====== LIST ======
  * ==================
 */
+
+#define CONTENT_TYPE uint32_t
 
 /*
     List item
@@ -53,6 +80,27 @@ typedef struct item{
             while(_tmp->next) { _tmp = _tmp->next; }\
             _tmp->next = _node;                     \
         }else { (head) = _node; }                   \
+    })
+
+/*
+  Adds node2 in the list just between node1 and node1->next.
+  If node1 is the last node of the list, LIST_ADD has the
+  same result than LIST_APPEND. If node2 is null, does nothing. 
+  This macro overwrites the content of node2->next
+*/
+#define LIST_ADD(node1,node2)                               \
+   ({                                                       \
+        __typeof__ (node1) _node1 = (node1);                \
+        __typeof__ (node2) _node2 = (node2);                \
+        if (_node2) {                                       \
+          if (_node1){                                      \
+            _node2->next = _node1->next;                    \
+            _node1->next = _node2;                          \
+          }else{                                            \
+            (node1)->_node2;                                \
+            _node2->next = NULL;                            \
+          }                                                 \
+        }                                                   \
     })
 
 /*
@@ -92,6 +140,10 @@ typedef struct item{
         }                                                   \
         (counter) = _counter;                               \
     })
+
+/*
+ * =====
+*/
 
 
 #endif //__UTILS_H__
