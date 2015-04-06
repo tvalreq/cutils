@@ -78,4 +78,21 @@ typedef struct item{
         }                                                   \
     })
 
+/*
+    Counts in counter the number of items contained in the list
+    pointed by head
+*/
+#define LIST_COUNT(head,counter)                            \
+   ({                                                       \
+        __typeof__ (counter) _counter = 0;                  \
+        __typeof__ (head) _tmp = (head);                    \
+        while(_tmp){                                        \
+            _counter++;                                     \
+            _tmp = _tmp->next;                              \
+        }                                                   \
+        (counter) = _counter;                               \
+    })
 
+
+#endif //__UTILS_H__
+   
