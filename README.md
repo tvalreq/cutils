@@ -22,7 +22,7 @@ Previously, you have to define the macro `CONTENT_TYPE` in order to determine th
 ##### MACROS #####
 
 - `LIST_APPEND(head,node)` appends a new item `node` into the list pointed by `head`.
-- `LIST_ADD(node1,node2)` adds `node2` item in the list just between `node1` and `node1->next`. **alpha...**
+- `LIST_ADD(node1,node2)` adds `node2` item in the list just between `node1` and `node1->next`. **pending...**
 - `LIST_REMOVE(head,node)` remove the item `node` from the list pointed by `head`.
 - `LIST_COUNT(head,counter)` counts in `counter` the number of items contained in the list pointed by `head`. **alpha...**
 
